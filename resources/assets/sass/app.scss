@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "variables";
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+html{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: $background;
+    margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $text-color-gray;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+button{
+    font-family: "Roboto", sans-serif;
+    background-color: $main-color;
+    color: $background-light;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    cursor:pointer;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid $text-color-gray;
+    background-color: rgba(0,0,0,0);
+    float: none;
+    overflow: hidden;
+    box-shadow:none;
+}
+
+input:focus{
+    color: $accent-color-dark;
+    border-bottom: 2px solid $accent-color;
+}
+
+div#main{
+    width: 100vw;
+    height: 100vh;
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 64px auto 64px;
+    grid-template-areas:
+        "header"
+        "article"
+        "footer";
+}
+
+@import "header";
+
+@import "nav";
+
+@import "content";
+
+@import "add-card";
+
+@import "card";
+
+@import "footer";
+
+@import "rwd";
+
+
+
+

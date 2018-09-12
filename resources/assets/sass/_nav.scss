@@ -1,0 +1,159 @@
+/* Side navigation panel */
+nav {
+    height: 100%;
+    width: 100%;
+    color: $text-color-gray;
+    font-size: 20px;
+    background-color: $background-light;
+    grid-area: nav;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-shadow: 0 0 16px rgba(0,0,0,0.25);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+hr.divLine{
+    display: block;
+    border: none;
+    border-top: 2px solid $background;
+    padding: 0;
+    margin: 1em 0;
+}
+
+nav>button, nav>a{
+    display: block;
+    min-width: 100%;
+    padding: 12px;
+    border-radius: 24px;
+    font-size: 16px;
+}
+
+img.logo{
+    width: 64px;
+    margin: 0 auto;
+    margin-top: 16px;
+    margin-bottom: -16px;
+    display: block;
+}
+
+nav button:hover, nav a:hover {
+    background-color: $main-color-dark;
+}
+
+#pageTitle{
+    text-align: center;
+    padding: 16px;
+}
+
+.folder-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.folder-header>h5{
+    margin: 16px;
+}
+
+.folder-header>button{
+    background: none;
+    box-shadow: none;
+    width: 50px;
+    border: none;
+    margin: 12px;
+    font-style: inherit;
+    color: $text-color-gray;
+    border-radius: 12px;
+}
+
+.folder-header>button:hover{
+    background: $background;
+}
+
+nav ul{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+nav li{
+    position: relative;
+    padding: 12px 12px 12px 80px;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+nav li:hover{
+    background: $background;
+}
+
+nav li::before{
+    content: '';
+    width: 25px;
+    height: 18px;
+    position: absolute;
+    background-size: cover;
+    background: url('/images/arrow.svg') center;
+    left: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav li>p{
+    display: inline;
+    font-size: 30px;
+    position: absolute;
+    right: 30px;
+    top: -65%;
+    //transform: translateY(-100%);
+}
+
+
+.folder-section>ul>hr{
+    display: block;
+    border: none;
+    border-top: 2px solid $background;
+    margin: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+}
+
+#add-folder::before{
+    background: url("/images/plus.svg");
+}
+
+#add-folder-text{
+
+}
+
+#add-folder-input{
+    display: none;
+}
+
+#add-folder-input>input{
+    width: 100px;
+    font-size: 16px;
+    border: none;
+}
+
+#add-folder-input>p{
+    display: inline;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 20px;
+    background: $background;
+    border-radius: 20px;
+    position: absolute;
+    right: 25px;
+    top: -25%;
+}
+
+#add-folder-input>p:hover{
+    background: $background-light;
+}

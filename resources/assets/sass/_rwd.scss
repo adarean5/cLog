@@ -1,0 +1,49 @@
+/* Website Rwd */
+
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+@media screen and (min-width:680px){
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 300px auto;
+        grid-template-areas:"nav main";
+
+    }
+
+    nav{
+        height: initial; /* 100% Full-height */
+        width: initial; /* 0 width - change this with JavaScript */
+        z-index: initial; /* Stay on top */
+        top: initial; /* Stay at the top */
+        left: initial;
+        overflow-x: initial; /* Disable horizontal scroll */
+        position: relative;
+        display: block !important;
+        padding-top: 0;
+    }
+
+    div#main{
+        width: initial;
+    }
+
+    #sideMenuButton{
+        display: none;
+    }
+}

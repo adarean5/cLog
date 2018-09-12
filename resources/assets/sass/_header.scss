@@ -1,0 +1,128 @@
+/* Header elements */
+
+header{
+    padding-left: 32px;
+    height: 64px;
+    grid-area: header;
+    line-height: 64px;
+    vertical-align: middle;
+    z-index: 2;
+    position: relative;
+    font-size: 24px;
+    color: $text-color-gray;
+}
+
+#sideMenuButton{
+    width: 24px;
+    height: auto;
+    margin-right: 8px;
+    border: none;
+}
+
+/* Profile info dropdown */
+#userCorner{
+    float:right;
+    position: relative;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 16px;
+}
+
+#userCorner > form > button{
+    background-color: $accent-color;
+    padding: 8px;
+    margin-left: 16px;
+    color: $background-light;
+    text-decoration: none;
+    display: inline;
+    text-align: center;
+    transition: transform 0.5s;
+    border-width: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 8px;
+    cursor:pointer;
+
+}
+
+#userCorner > input{
+    width: 40px;
+    cursor:pointer;
+    border: none;
+}
+
+#userCorner button:hover{
+    background-color: $accent-color-dark;
+}
+
+#userCorner > p{
+    display: inline;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.profileDropdown {
+    float: left;
+    position: absolute;
+    background-color: $background-light;
+    min-width: 300px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    right: 16px;
+    top: 60px;
+    left: auto;
+    display: grid;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "profile info";
+
+    line-height: 10px;
+    font-size: 16px;
+    border-radius: 16px;
+}
+
+#dropdownName {
+    color: $main-color;
+    margin: 10px 0 0;
+    font-size: 24px;
+    display: flex;
+    flex: 1;
+}
+
+#dropdownContent button {
+    display: flex;
+    flex: 1;
+    align-self: flex-end;
+    margin: 0;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+#dropdownContent button:hover{
+    background: $main-color-dark;
+}
+
+#dropdownPicture{
+    grid-area: profile;
+    padding: 10px;
+}
+
+#dropdownContent{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+}
+
+#dropdownMail{
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+    flex: 1;
+}

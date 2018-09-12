@@ -1,0 +1,17 @@
+div#mainDisplay{
+    grid-area: article;
+    padding: 16px;
+    overflow: auto;
+    position: relative;
+}
+
+/* Card grid */
+
+.contactGrid {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* center if you want to the center */
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}

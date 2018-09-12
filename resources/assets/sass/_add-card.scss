@@ -1,0 +1,302 @@
+.contactDialogueBackground {
+    //display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+    display: none;
+}
+
+/* Modal Content/Box */
+.contactDialogue {
+    margin: 64px auto; /* 15% from the top and centered */
+    //width: 40%; /* Could be more or less, depending on screen size */
+    width: 95%;
+    //height: 484px;
+    //height: ;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: grid;
+    /*grid-template-columns: 40% auto;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "left right";*/
+    grid-template-areas: "left" "right";
+    grid-template-columns: 100%;
+    background-color: $background-light;
+    border-radius: 16px;
+}
+
+.contactDialogue>#left{
+    grid-area: left;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contactDialogue>#left div{
+    display: grid;
+    margin-bottom: 8px;
+    grid-template-columns: 35px auto 10%;
+    grid-template-areas: "icon input symbol";
+}
+
+
+
+.contactDialogue>#left img:not(#selectPhoto){
+    grid-area: icon;
+    width: 16px;
+    margin: 16px;
+}
+
+.contactDialogue>#left>#selectPhoto{
+    margin: 30px;
+    max-height: 50%;
+}
+
+.contactDialogue>#left select{
+    height: 30px;
+    margin: 8px;
+    padding-left: 8px;
+    background: $background;
+    grid-area: input;
+    border: none;
+    font: inherit;
+    font-size: 12px;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.contactDialogue>#left select {
+    background-image:
+        linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+    background-position:
+        calc(100% - 16px) calc(1em + 2px),
+        calc(100% - 11px) calc(1em + 2px),
+        calc(100% - 2.5em) 0.5em;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+.contactDialogue>select:focus {
+   border: 2px solid $accent-color;
+}
+
+.contactDialogue>#right{
+    grid-area: right;
+    padding: 48px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contactDialogue>#right div{
+    display: grid;
+    margin-bottom: 8px;
+    grid-template-columns: 10% auto 10%;
+    grid-template-areas: "icon input symbol";
+}
+
+.contactDialogue>#right img{
+    grid-area: icon;
+    width: 16px;
+    margin: 16px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 16px;
+    margin-top: 8px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contactDialogue div p{
+    grid-area: symbol;
+    padding-left: 16px;
+}
+
+.contactDialogue input{
+    padding: 8px;
+    margin: 8px;
+    //width: fit-content;
+    /*border: none;
+    border-bottom: 1px solid $text-color-gray;
+    background-color: rgba(0,0,0,0);*/
+    position: relative;
+    //float: none; overflow: hidden;
+    grid-area: input;
+    //box-shadow:none;
+}
+
+.contactDialogue textarea{
+    padding: 16px;
+    margin: 8px;
+    height: 150px;
+    grid-area: input;
+    //width: fit-content;
+    border: none;
+    background: $background;
+    position: relative;
+    float: none; overflow: hidden;
+    box-shadow:none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    resize: none;
+    border-radius: 16px;
+}
+
+
+.contactDialogue textarea:focus{
+    border: 2px solid $accent-color;
+}
+
+.contactDialogue input:valid + p, textarea:valid + p{
+    color: #4CAF50;
+}
+
+.contactDialogue input:invalid + p, textarea:invalid + p{
+    color: #ED4D49;
+}
+
+#addCardErrorMsg{
+    color: #ED4D49;
+    font-size: 14px;
+}
+
+button.smallerButton{
+    padding: 8px;
+    background-color: $main-color;
+}
+
+/*button.smallerButton:focus{
+    background-color: $main-color-dark;
+}*/
+
+#right>#confirmContact {
+    display: flex;
+    justify-content: flex-end ;
+    margin-right: 16px;
+    margin-top: auto;
+}
+
+#right button {
+    margin: 0;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: $main-color;
+    color: $background-light;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.5s;
+    border-width: 0;
+    font-size: 14px;
+    cursor:pointer;
+    border-radius: 16px;
+}
+
+#right button:hover{
+    background: $main-color-dark;
+}
+
+#right select{
+
+}
+
+#left button {
+    margin: 16px;
+    padding: 8px;
+    background-color: $main-color;
+    color: $background-light;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.5s;
+    border-width: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor:pointer;
+}
+
+#left button:hover{
+    background: $main-color-dark;
+}
+
+#right>#descDiv {
+    //height: 40%;
+}
+
+@media (min-width: 410px) {
+    .contactDialogue{
+        width: 80%;
+    }
+}
+
+@media (min-width: 680px) {
+    .contactDialogue {
+        width: 95%;
+        //height: 484px;
+        grid-template-columns: 40% auto;
+        grid-template-rows: 100%;
+        grid-template-areas: "left right";
+    }
+}
+
+@media (min-width: 850px) {
+    .contactDialogue {
+        //height: 484px;
+        width: 70%;
+        grid-template-columns: 40% auto;
+        grid-template-rows: 100%;
+        grid-template-areas: "left right";
+    }
+}
+
+@media (min-width: 1000px) {
+    .contactDialogue{
+        width: 50%;
+    }
+}
+
+@media (min-width: 1500px) {
+
+}
+
+@media (min-width: 1920px) {
+    .contactDialogue{
+        width: 40%; /* Could be more or less, depending on screen size */
+        height: 484px;
+        grid-template-columns: 40% auto;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "left right";
+    }
+}
+
